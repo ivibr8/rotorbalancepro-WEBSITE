@@ -86,7 +86,7 @@
 
     <div class="nav">
         <a href="index.html">Home</a>
-        <a href="slides.html">Slides</a>
+        <a href="slide.html">Slides</a>
     </div>
 
     <h1>Presentation Slides</h1>
@@ -96,6 +96,61 @@
         <!-- SLIDES -->
         <img src="assets/images/slides/CoverTBD.JPG" class="slide active" alt="Slide 1">
         <img src="assets/images/slides/Home.JPG" class="slide" alt="Slide 2">
+        <img src="assets/images/slides/SinglePlane.JPG" class="slide" alt="Slide 3">
+        <img src="assets/images/slides/TwoPlane.JPG" class="slide" alt="Slide 4">
+        <img src="assets/images/slides/4Run.JPG" class="slide" alt="Slide 5">
+        <img src="assets/images/slides/WtMgr.JPG" class="slide" alt="Slide 6">
+        <img src="assets/images/slides/Severity.JPG" class="slide" alt="Slide 7">
+        <img src="assets/images/slides/TWEst.JPG" class="slide" alt="Slide 8">
+
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="controls">
+        <span class="arrow" id="prev">&#8592; Prev</span>
+        <span class="arrow" id="next">Next &#8594;</span>
+    </div>
+
+    <div class="counter" id="counter">Slide 1 of 8</div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const counter = document.getElementById('counter');
+        let current = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) slide.classList.add('active');
+            });
+            counter.textContent = `Slide ${index + 1} of ${slides.length}`;
+        }
+
+        document.getElementById('next').onclick = () => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        };
+
+        document.getElementById('prev').onclick = () => {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        };
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            }
+            if (e.key === 'ArrowLeft') {
+                current = (current - 1 + slides.length) % slides.length;
+                showSlide(current);
+            }
+        });
+    </script>
+
+</body>
+</html>
 
 
 
