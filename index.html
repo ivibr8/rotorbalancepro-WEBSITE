@@ -10,6 +10,7 @@
             margin: 0;
             padding: 30px 20px;
             line-height: 1.6;
+            color: #222;
         }
 
         .nav {
@@ -26,60 +27,292 @@
         }
 
         .container {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        h1 {
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.6em;
             color: #003366;
-            font-size: 2.4em;
             margin-bottom: 10px;
         }
 
-        p {
+        .hero p {
             font-size: 1.15em;
             color: #333;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
         }
 
-        .screenshot {
-            width: 90%;
-            max-width: 900px;
-            margin: 40px auto;
-            display: block;
-
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(8px);
-
-            padding: 14px;
-            border: 1px solid rgba(0,0,0,0.15);
-
-            box-shadow: 0 8px 22px rgba(0,0,0,0.18);
-
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .screenshot:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-        }
-
-        .help-box {
-            background: rgba(230, 240, 255, 0.7);
-            padding: 20px;
-            border-left: 4px solid #003366;
-            border-radius: 10px;
+        .hero-buttons {
             margin-top: 20px;
-            text-align: left;
         }
 
         .button {
             display: inline-block;
-            padding: 14px 24px;
-            background: #003366;
-            color: white;
-            text-decoration: none;
+            padding: 12px 22px;
+            margin: 8px 10px;
             border-radius: 8px;
-            margin-top: 30px;
-            font
+            text-decoration: none;
+            font-size: 1.05em;
+        }
+
+        .button-primary {
+            background: #003366;
+            color: #fff;
+        }
+
+        .button-secondary {
+            background: #ffffff;
+            color: #003366;
+            border: 1px solid #003366;
+        }
+
+        .section {
+            margin: 40px 0;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            padding: 24px 26px;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: #003366;
+            font-size: 1.6em;
+        }
+
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .column {
+            flex: 1 1 280px;
+        }
+
+        .column h3 {
+            margin-top: 0;
+            color: #003366;
+            font-size: 1.25em;
+        }
+
+        .column ul {
+            padding-left: 20px;
+            margin: 8px 0 0 0;
+        }
+
+        .column li {
+            margin-bottom: 6px;
+        }
+
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin-top: 16px;
+        }
+
+        .module-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 14px;
+            padding: 16px 18px;
+            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        }
+
+        .module-card h3 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            color: #003366;
+            font-size: 1.15em;
+        }
+
+        .module-card p {
+            margin: 4px 0;
+            font-size: 0.98em;
+        }
+
+        .summary-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 10px 0 0 0;
+        }
+
+        .summary-list li::before {
+            content: "• ";
+            color: #003366;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            margin: 4px 0;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 20px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="slide.html">Slides</a>
+    </div>
+
+    <div class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+            <h1>Simplify Rotor Balancing. Improve Results. Reduce Runs.</h1>
+            <p>
+                A practical software solution for field rotor balancing—designed for maintenance and engineering professionals
+                who need faster, more consistent results in real-world conditions.
+            </p>
+            <div class="hero-buttons">
+                <a href="slide.html" class="button button-secondary">View Product Walkthrough</a>
+                <a href="https://your-vercel-app-url-here" class="button button-primary">Start 10‑Day Trial</a>
+            </div>
+        </section>
+
+        <!-- PAIN / SOLUTION -->
+        <section class="section">
+            <div class="two-column">
+                <div class="column">
+                    <h3>Balancing Isn’t Always Efficient</h3>
+                    <ul>
+                        <li>Trial weights often rely on guesswork</li>
+                        <li>Phase data may be unavailable</li>
+                        <li>Multiple runs increase downtime and frustration</li>
+                        <li>Rotors accumulate unnecessary weights</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>A More Controlled Approach</h3>
+                    <ul>
+                        <li>Confident trial weight placement</li>
+                        <li>Balance without phase (4‑run method)</li>
+                        <li>Fewer runs required</li>
+                        <li>Consolidate and/or split weights for optimal effect</li>
+                        <li>Detailed help text for all modules—no guessing</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODULES / CORE CAPABILITIES -->
+        <section class="section">
+            <h2>Core Capabilities</h2>
+            <div class="modules-grid">
+
+                <div class="module-card">
+                    <h3>Single‑Plane Balancing</h3>
+                    <p>
+                        Designed for “thin” rotors where correction occurs in one plane. Uses the Influence Coefficient
+                        method with vector math to calculate precise correction weights.
+                    </p>
+                    <p>
+                        Includes polar plots, zoom/pan visualization, and optional Least‑Squares optimization.
+                    </p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Two‑Plane Balancing</h3>
+                    <p>
+                        For wider rotors requiring simultaneous correction in two planes. Uses a full 2×2 influence matrix
+                        with clear cross‑effect visualization.
+                    </p>
+                    <p>
+                        Provides vector diagrams and a structured workflow for consistent, repeatable results.
+                    </p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Trial Weight Estimator</h3>
+                    <p>
+                        Helps determine an appropriate trial weight using machine response assumptions and rules of thumb.
+                    </p>
+                    <p>
+                        Improves first‑try success rates and reduces wasted runs.
+                    </p>
+                </div>
+
+                <div class="module-card">
+                    <h3>4‑Run No‑Phase Method</h3>
+                    <p>
+                        Phase‑free balancing using vibration amplitudes. Uses trilateration and optimization to locate the
+                        unbalance vector.
+                    </p>
+                    <p>
+                        Allows flexible trial weight placement—not limited to typical 120° patterns seen in other tools.
+                    </p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Weight Manager</h3>
+                    <p>
+                        Consolidate existing weights into one location or split weights for optimal balancing results.
+                    </p>
+                    <p>
+                        Keeps the rotor clean, organized, and easier to service in the future.
+                    </p>
+                </div>
+
+                <div class="module-card">
+                    <h3>Severity Screening</h3>
+                    <p>
+                        Evaluates vibration severity using an ISO 10816‑inspired hybrid interpretation with color‑coded thresholds.
+                    </p>
+                    <p>
+                        Quickly understand existing vibration levels before and after balancing.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VALUE SUMMARY -->
+        <section class="section">
+            <h2>What This Means in the Field</h2>
+            <ul class="summary-list">
+                <li>Reduced balancing time</li>
+                <li>More consistent, repeatable results</li>
+                <li>Less guesswork and fewer surprises</li>
+                <li>Faster job completion and less downtime</li>
+            </ul>
+        </section>
+
+        <!-- CTA -->
+        <section class="section cta-section">
+            <h2>Try It Risk‑Free</h2>
+            <p>10‑Day Free Trial – Full Access</p>
+            <p>No subscription • Lifetime use</p>
+            <p>One‑Time Purchase: $ TBD (Intro Price)</p>
+            <div class="hero-buttons">
+                <a href="https://your-vercel-app-url-here" class="button button-primary">Start 10‑Day Trial</a>
+                <a href="slide.html" class="button button-secondary">View Product Walkthrough</a>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
