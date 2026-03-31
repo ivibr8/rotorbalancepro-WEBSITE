@@ -32,21 +32,27 @@
         /* INVISIBLE CLICKABLE HOTSPOT */
         .hotspot {
             position: absolute;
-
-            /* Position based on your engineering coordinates */
             left: 14%;
             bottom: 38%;
-
-            /* Center the hotspot on that point */
             transform: translate(-50%, 50%);
-
-            /* Size of the clickable area (adjustable) */
             width: 220px;
             height: 80px;
-
-            /* Invisible but clickable */
             background: rgba(255, 255, 255, 0);
             cursor: pointer;
+        }
+
+        /* CTA BUTTON */
+        .cta-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: #003366;
+            color: #fff;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
         }
 
         footer {
@@ -63,10 +69,13 @@
     <!-- HERO IMAGE WITH INVISIBLE CLICKABLE HOTSPOT -->
     <div class="hero-wrapper">
         <img src="assets/images/slides/Hero_Copilot.png" alt="RotorBalance Pro" class="hero-image">
-
-        <!-- INVISIBLE BUTTON OVER THE EMBEDDED OVAL -->
         <a href="slide.html" class="hotspot"></a>
     </div>
+
+    <!-- CTA BUTTON TO LAUNCH THE REAL APP -->
+    <a href="https://YOUR-VERCEL-APP-URL.vercel.app" class="cta-button">
+        Start Free Trial
+    </a>
 
     <footer>
         © 2026 RotorBalance Pro — All Rights Reserved
@@ -74,5 +83,4 @@
 
 </body>
 </html>
-
 
