@@ -105,25 +105,26 @@
     <script>
         const slides = document.querySelectorAll('.slide');
         const counter = document.getElementById('counter');
+        const nextBtn = document.getElementById('next');
+        const prevBtn = document.getElementById('prev');
         let current = 0;
 
         function showSlide(index) {
             slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
+                slide.classList.toggle('active', i === index);
             });
-            counter.textContent = `Slide ${index + 1} of ${slides.length}`;
+            counter.textContent = 'Slide ' + (index + 1) + ' of ' + slides.length;
         }
 
-        document.getElementById('next').onclick = () => {
+        nextBtn.addEventListener('click', () => {
             current = (current + 1) % slides.length;
             showSlide(current);
-        };
+        });
 
-        document.getElementById('prev').onclick = () => {
+        prevBtn.addEventListener('click', () => {
             current = (current - 1 + slides.length) % slides.length;
             showSlide(current);
-        };
+        });
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
@@ -131,7 +132,18 @@
                 current = (current + 1) % slides.length;
                 showSlide(current);
             }
-            if (e.key === 'Arrow
+            if (e.key === 'ArrowLeft') {
+                current = (current - 1 + slides.length) % slides.length;
+                showSlide(current);
+            }
+        });
+
+        // Ensure initial state is correct
+        showSlide(current);
+    </script>
+
+</body>
+</html>
 
 
 
